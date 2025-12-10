@@ -17,67 +17,85 @@
             <h2>Web Developer</h2>
         </div>
 
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Inici</a></li>
-                <li><a href="projectes.html">Projectes</a></li>
-                <li><a href="contacte.html">Contacte</a></li>
-            </ul>
+        <nav class="menu-horizontal">
+            <a href="index.html">Inici</a>
+            <a href="projectes.html">Projectes</a>
+            <a href="contacte.html">Contacte</a>
         </nav>
     </header>
 
-    <!-- MAIN NUEVO BONITO -->
-    <main>
+    <!-- CONTENEDOR PRINCIPAL: SIDEBAR + MAIN -->
+    <div class="layout">
 
-        <!-- Sección de presentación -->
-        <section class="hero">
-            <h1 class="hero-title">Hola, soc Taylor 👋</h1>
-            <p class="hero-subtitle">Desenvolupador web i estudiant d’ASIX. Aquí trobaràs els meus projectes més destacats.</p>
-        </section>
+        <!-- SIDEBAR IZQUIERDO -->
+        <aside class="sidebar">
 
-        <!-- Sección de proyectos destacados -->
-        <section class="featured-projects">
-            <h2>Projectes Destacats</h2>
+            <!-- SEARCH -->
+            <div class="sidebar-section">
+                <h3>Browser</h3>
+                <div class="browser-box">
+                    <input type="text" placeholder="Cerca un projecte..." id="sideSearch">
+                </div>
+            </div>
 
-            <div class="projects-grid">
+            <!-- PROJECT LIST -->
+            <div class="sidebar-section">
+                <h3>Project List</h3>
+                <div class="project-list-box">
+                    <ul class="project-list">
+                        <li><a href="projecte1.html">Projecte 1</a></li>
+                        <li><a href="projecte2.html">Projecte 2</a></li>
+                        <li>Projecte 3</li>
+                        <li>Projecte 4</li>
+                    </ul>
+                </div>
+            </div>
 
-                <!-- PROYECTO 1 -->
-                <article class="project-card reveal">
-                    <img src="img/project1.png" alt="Projecte 1">
-                    <div class="project-info">
+        </aside>
+
+        <!-- MAIN -->
+        <main>
+
+            <!-- PROJECTES DESTACATS -->
+            <section class="featured-projects">
+                <h2 class="center-title">Projectes Destacats</h2>
+
+                <div class="projects-two-column">
+
+                    <!-- Columna izquierda: Proyecto 1 -->
+                    <div class="left-column">
+                        <img src="img/project1.png" class="project-img">
                         <h3>Projecte 1</h3>
                         <p>Descripció breu i clara del projecte.</p>
                         <a href="projecte1.html" class="btn">Veure més</a>
                     </div>
-                </article>
 
-                <!-- PROYECTO 2 -->
-                <article class="project-card reveal">
-                    <img src="img/project2.png" alt="Projecte 2">
-                    <div class="project-info">
+                    <!-- Columna derecha: Proyecto 2 -->
+                    <div class="right-column">
+                        <img src="img/project2.png" class="project-img">
                         <h3>Projecte 2</h3>
                         <p>Descripció breu i clara del projecte.</p>
                         <a href="projecte2.html" class="btn">Veure més</a>
                     </div>
-                </article>
 
-            </div>
-        </section>
+                </div>
 
-    </main>
+            </section>
+
+        </main>
+
+    </div>
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 Taylor – Tots els drets reservats</p>
-        <div class="socials">
+    <footer class="footer-bar">
+        <span class="footer-left">© 2025 Taylor – Tots els drets reservats</span>
+
+        <span class="footer-right">
             <a href="#">Instagram</a>
             <a href="#">GitHub</a>
             <a href="#">Email</a>
-        </div>
+        </span>
     </footer>
-
-    <!-- Aquí pondrás script.js en el ejercicio 5 -->
-    <!-- <script src="script.js"></script> -->
 
 </body>
 </html>

@@ -1,50 +1,63 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecte 1 | Taylor</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Project — Taylor Gerard Uriña Pincay</title>
+
+    <link rel="stylesheet" href="project1.css">
+    <script defer src="project1.js"></script>
 </head>
 
 <body>
 
-    <!-- HEADER (igual que index.html) -->
-    <header>
-        <div class="logo">
-            <h1>Taylor</h1>
-            <h2>Web Developer</h2>
+    <div class="project-wrapper">
+
+        <!-- TOP: NAME + TITLE -->
+        <header class="top-section">
+            <div class="pill name-box">
+                <h2 id="project-name">TAYLOR GERARD URIÑA PINCAY</h2>
+            </div>
+
+            <div class="pill title-box">
+                <h2 id="project-title">Project Title</h2>
+            </div>
+        </header>
+
+        <!-- MIDDLE: IMAGE + TEXT -->
+        <main class="middle-section">
+
+            <div class="img-container box">
+                <img id="project-img" src="" alt="Project Image">
+            </div>
+
+            <div class="text-container box">
+                <p id="project-description">
+                    Aquí aparecerá la descripción detallada de este proyecto.
+                </p>
+            </div>
+
+        </main>
+
+        <!-- CODE BUTTON -->
+        <div class="code-section">
+            <button id="code-btn" class="code-btn">
+                VIEW CODE
+            </button>
         </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Inici</a></li>
-                <li><a href="projectes.html">Projectes</a></li>
-                <li><a href="contacte.html">Contacte</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- MAIN -->
-    <main>
-        <section id="detall-projecte">
-            <img src="img/project1.png" alt="Projecte 1">
-            <h2>Projecte 1</h2>
-            <p>Descripció detallada del projecte 1.</p>
+        <!-- FOOTER -->
+        <footer class="footer-section">
+            <div class="pill footer-left">
+                <p id="copyright">© 2025 — Portfolio by Taylor</p>
+            </div>
 
-            <h3>Codi del projecte</h3>
-            <a href="#">Repositori</a>
-        </section>
-    </main>
+            <div class="pill footer-right">
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </footer>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 Taylor – Tots els drets reservats</p>
-        <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-            <a href="#">Email</a>
-        </div>
-    </footer>
+    </div>
 
 </body>
 </html>

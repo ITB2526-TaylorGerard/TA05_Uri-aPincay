@@ -1,0 +1,131 @@
+/* GENERAL */
+body {
+    background: #0A0F1F;
+    color: #E8F1FF;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.project-wrapper {
+    width: 90%;
+    max-width: 1300px;
+    margin: 40px auto;
+    border: 2px solid #1A73E8;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: rgba(10, 15, 31, 0.8);
+    backdrop-filter: blur(6px);
+}
+
+/* PILL BOXES */
+.pill {
+    border: 2px solid #4BB0FF;
+    border-radius: 40px;
+    padding: 12px 20px;
+    text-align: center;
+    background: rgba(26, 115, 232, 0.1);
+    transition: 0.3s ease;
+}
+
+.pill:hover {
+    border-color: #8FD3FF;
+    box-shadow: 0 0 12px #4BB0FF;
+}
+
+/* TOP */
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.name-box, .title-box {
+    width: 45%;
+    color: #8FD3FF;
+}
+
+/* MIDDLE */
+.middle-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.box {
+    border: 2px solid #1A73E8;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(15, 20, 40, 0.7);
+    transition: 0.3s;
+}
+
+.box:hover {
+    border-color: #4BB0FF;
+    box-shadow: 0 0 12px #1A73E8;
+}
+
+/* IMAGE BOX */
+.img-container {
+    width: 45%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 12px;
+}
+
+/* TEXT */
+.text-container {
+    width: 55%;
+    height: 350px;
+    overflow-y: auto;
+    color: #DDEEFF;
+}
+
+/* CODE BUTTON */
+.code-section {
+    margin: 30px 0;
+    width: 30%;
+}
+
+.code-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #1A73E8, #4BB0FF);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #1A73E8;
+    transition: 0.3s;
+}
+
+.code-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #4BB0FF;
+}
+
+/* FOOTER */
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.footer-right a {
+    color: #8FD3FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-right a:hover {
+    text-decoration: underline;
+}
