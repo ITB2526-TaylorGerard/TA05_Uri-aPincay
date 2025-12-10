@@ -1,0 +1,264 @@
+/* ---------------------------- */
+/*        ESTILOS GENERALES     */
+/* ---------------------------- */
+
+:root {
+    --bg: #ffffff;
+    --text: #222;
+    --primary: #4a73ff;
+    --card-bg: #f2f2f2;
+    --dark-bg: #1a1a1a;
+    --dark-text: #eaeaea;
+}
+
+/* MODO OSCURO (activado con JS) */
+body.dark {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* ---------------------------- */
+/*            HEADER            */
+/* ---------------------------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--primary);
+    color: white;
+}
+
+.logo h1 { font-size: 24px; }
+.logo h2 { font-size: 14px; font-weight: normal; }
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background: white;
+    color: var(--primary);
+    transition: 0.3s;
+}
+
+/* ---------------------------- */
+/*            MAIN              */
+/* ---------------------------- */
+
+main {
+    padding: 40px 20px;
+}
+
+/* Sección de proyectos destacados */
+#projectes-destacats {
+    margin-bottom: 40px;
+}
+
+.projecte {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER AVANZADO (animación suave) */
+.projecte:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Botones */
+.projecte a,
+button,
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.projecte a:hover,
+button:hover,
+.btn:hover {
+    background: #2e4bcf;
+}
+
+/* ASIDE */
+aside {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+/* ---------------------------- */
+/*            FOOTER            */
+/* ---------------------------- */
+
+footer {
+    padding: 20px;
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .socials a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+footer .socials a:hover {
+    color: var(--primary);
+}
+
+/* ---------------------------- */
+/*          CONTACTE            */
+/* ---------------------------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 450px;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* ---------------------------- */
+/*     LLISTA DE PROJECTES      */
+/* ---------------------------- */
+
+#llista-projectes {
+    margin-top: 20px;
+}
+
+.fila-projecte {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 100px;
+    align-items: center;
+}
+
+.fila-projecte a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#search {
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* ---------------------------- */
+/*       SCROLL REVEAL          */
+/* (solo CSS, la animación se
+   activa con JS añadiendo .visible)
+/* ---------------------------- */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------------------- */
+/*        ICONOS ANIMADOS       */
+/* ---------------------------- */
+
+.icon {
+    font-size: 24px;
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: var(--primary);
+}
+
+/* ---------------------------- */
+/*          RESPONSIVE          */
+/* ---------------------------- */
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .fila-projecte {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 8px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .projecte {
+        text-align: center;
+    }
+}
