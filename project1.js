@@ -1,20 +1,15 @@
-// Datos del proyecto (ejemplo)
 const projectData = {
     title: "Sistema de Gestión IT",
-    description: `Proyecto avanzado desarrollado en HTML, CSS y JavaScript.
-Incluye visualización moderna, efectos y diseño responsive.`,
+    description: `Proyecto desarrollado como parte del portfolio personal.
+Incluye diseño moderno, estructura clara y funcionalidades en JavaScript.`,
     image: "img/project1.png",
     code: "https://github.com/Taylor-Portfolio",
+    twitter: "https://twitter.com/TU_USUARIO",
+    linkedin: "https://www.linkedin.com/in/TU_USUARIO"
 };
 
-// Cargar datos
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Nombre fijo
-    document.getElementById("project-name").textContent =
-        "TAYLOR GERARD URIÑA PINCAY";
-
-    // Datos dinámicos del proyecto
     document.getElementById("project-title").textContent = projectData.title;
     document.getElementById("project-description").textContent = projectData.description;
 
@@ -22,7 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("project-img").src = projectData.image;
     }
 
-    // Enlace al código
+    document.getElementById("twitter-link").href = projectData.twitter;
+    document.getElementById("linkedin-link").href = projectData.linkedin;
+
     document.getElementById("code-btn").addEventListener("click", () => {
         window.open(projectData.code, "_blank");
     });

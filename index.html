@@ -1,101 +1,113 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfoli personal de Taylor">
-    <title>Inici | Portfoli Taylor</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio — Taylor Gerard Uriña Pincay</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script defer src="index.js"></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <h1>Taylor</h1>
-            <h2>Web Developer</h2>
+<div class="project-wrapper">
+
+    <!-- TOP -->
+    <header class="top-section">
+        <div class="pill name-box">
+            <h2>TAYLOR GERARD URIÑA PINCAY</h2>
         </div>
 
-        <nav class="menu-horizontal">
-            <a href="index.html">Inici</a>
-            <a href="projectes.html">Projectes</a>
-            <a href="contacte.html">Contacte</a>
-        </nav>
+        <div class="pill title-box">
+            <h2>PORTFOLIO</h2>
+        </div>
     </header>
 
-    <!-- CONTENEDOR PRINCIPAL: SIDEBAR + MAIN -->
-    <div class="layout">
+    <!-- MAIN -->
+    <main class="main-section">
 
-        <!-- SIDEBAR IZQUIERDO -->
-        <aside class="sidebar">
+        <!-- LEFT -->
+        <section class="left-column box">
 
-            <!-- SEARCH -->
-            <div class="sidebar-section">
-                <h3>Browser</h3>
-                <div class="browser-box">
-                    <input type="text" placeholder="Cerca un projecte..." id="sideSearch">
-                </div>
+            <div class="browser pill">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search project..."
+                >
             </div>
 
-            <!-- PROJECT LIST -->
-            <div class="sidebar-section">
-                <h3>Project List</h3>
-                <div class="project-list-box">
-                    <ul class="project-list">
-                        <li><a href="projecte1.html">Projecte 1</a></li>
-                        <li><a href="projecte2.html">Projecte 2</a></li>
-                        <li>Projecte 3</li>
-                        <li>Projecte 4</li>
-                    </ul>
-                </div>
+            <div class="project-list box" id="projectList">
+                <a href="project1.html" class="project-item">Project 1</a>
+                <a href="project1.html" class="project-item">Project 2</a>
+                <a href="#" class="project-item">Project 3</a>
+                <a href="#" class="project-item">Project 4</a>
             </div>
 
-        </aside>
+        </section>
 
-        <!-- MAIN -->
-        <main>
+        <!-- CENTER -->
+        <section class="center-column box">
+            <div class="center-img box">
+                <img src="img/project1.png" alt="Project image">
+            </div>
 
-            <!-- PROJECTES DESTACATS -->
-            <section class="featured-projects">
-                <h2 class="center-title">Projectes Destacats</h2>
+            <div class="center-text box">
+                <p>
+                    Featured project description.
+                    Click on a project to see full details.
+                </p>
+            </div>
+        </section>
 
-                <div class="projects-two-column">
+        <!-- RIGHT -->
+        <section class="right-column box">
+            <div class="right-text box">
+                <p>
+                    Additional information, technologies used,
+                    or short personal presentation.
+                </p>
+            </div>
 
-                    <!-- Columna izquierda: Proyecto 1 -->
-                    <div class="left-column">
-                        <img src="img/project1.png" class="project-img">
-                        <h3>Projecte 1</h3>
-                        <p>Descripció breu i clara del projecte.</p>
-                        <a href="projecte1.html" class="btn">Veure més</a>
-                    </div>
+            <div class="right-img box">
+                <img src="img/project2.png" alt="Project image">
+            </div>
+        </section>
 
-                    <!-- Columna derecha: Proyecto 2 -->
-                    <div class="right-column">
-                        <img src="img/project2.png" class="project-img">
-                        <h3>Projecte 2</h3>
-                        <p>Descripció breu i clara del projecte.</p>
-                        <a href="projecte2.html" class="btn">Veure més</a>
-                    </div>
-
-                </div>
-
-            </section>
-
-        </main>
-
-    </div>
+    </main>
 
     <!-- FOOTER -->
-    <footer class="footer-bar">
-        <span class="footer-left">© 2025 Taylor – Tots els drets reservats</span>
+    <footer class="footer-section">
 
-        <span class="footer-right">
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-            <a href="#">Email</a>
-        </span>
+        <div class="pill footer-left">
+            <p>© 2025 — Portfolio by Taylor</p>
+        </div>
+
+        <div class="pill footer-right">
+            <div class="contact-icons">
+                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="contact.html" class="contact-btn">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
     </footer>
+
+</div>
 
 </body>
 </html>

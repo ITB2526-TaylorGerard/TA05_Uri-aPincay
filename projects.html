@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Taylor Gerard Uriña Pincay</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script defer src="projects.js"></script>
+</head>
+
+<body>
+
+<div class="project-wrapper">
+
+    <!-- TOP -->
+    <header class="top-section">
+        <div class="pill name-box">
+            <h2>TAYLOR GERARD URIÑA PINCAY</h2>
+        </div>
+
+        <div class="pill title-box">
+            <h2>PROJECTS</h2>
+        </div>
+    </header>
+
+    <!-- PROJECTS SECTION -->
+    <main class="projects-section box">
+
+        <!-- FILTERS -->
+        <div class="filters-container">
+            <div class="filters pill">
+                <input type="text" id="filterInput" placeholder="Search project...">
+            </div>
+
+            <div class="filters">
+                <div class="filter-bubble">
+                    <label for="languageFilter">Language:</label>
+                    <select id="languageFilter">
+                        <option value="all">All Languages</option>
+                        <option value="MySQL">MySQL</option>
+                        <option value="Cisco">Cisco</option>
+                        <option value="JS">JS</option>
+                        <option value="CSS">CSS</option>
+                        <option value="C++">C++</option>
+                        <option value="C+">C+</option>
+                        <option value="HTML">HTML</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </div>
+
+                <div class="filter-bubble">
+                    <label for="yearFilter">Year:</label>
+                    <select id="yearFilter">
+                        <option value="all">All Years</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROJECT LIST -->
+        <div class="projects-list">
+
+            <div class="project-row" data-language="HTML" data-year="2025">
+                <div class="project-name">Portfolio Web</div>
+                <div class="project-lang">HTML / CSS / JS</div>
+                <div class="project-date">2025</div>
+            </div>
+
+            <div class="project-row" data-language="CSS" data-year="2024">
+                <div class="project-name">Network Lab</div>
+                <div class="project-lang">Cisco / Packet Tracer</div>
+                <div class="project-date">2024</div>
+            </div>
+
+            <div class="project-row" data-language="JS" data-year="2024">
+                <div class="project-name">Database Design</div>
+                <div class="project-lang">MySQL</div>
+                <div class="project-date">2024</div>
+            </div>
+
+            <div class="project-row" data-language="Bash" data-year="2023">
+                <div class="project-name">Linux Server</div>
+                <div class="project-lang">Bash</div>
+                <div class="project-date">2023</div>
+            </div>
+
+            <div class="project-row" data-language="C++" data-year="2023">
+                <div class="project-name">Security Basics</div>
+                <div class="project-lang">Cybersecurity</div>
+                <div class="project-date">2023</div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-section">
+
+        <div class="pill footer-left">
+            <p>© 2025 — Portfolio by Taylor</p>
+        </div>
+
+        <div class="pill footer-right">
+            <div class="contact-icons">
+                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="contact.html" class="contact-btn">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
