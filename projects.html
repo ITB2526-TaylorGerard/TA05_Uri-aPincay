@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects — Taylor Gerard Uriña Pincay</title>
+    <title>Portfolio — Taylor Gerard Uriña Pincay</title>
 
-    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="index.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <script defer src="projects.js"></script>
+    <script defer src="index.js"></script>
 </head>
 
 <body>
@@ -25,81 +25,60 @@
         </div>
 
         <div class="pill title-box">
-            <h2>PROJECTS</h2>
+            <h2>PORTFOLIO</h2>
         </div>
     </header>
 
-    <!-- PROJECTS SECTION -->
-    <main class="projects-section box">
+    <!-- MAIN -->
+    <main class="main-section">
 
-        <!-- FILTERS -->
-        <div class="filters-container">
-            <div class="filters pill">
-                <input type="text" id="filterInput" placeholder="Search project...">
+        <!-- LEFT -->
+        <section class="left-column box">
+
+            <div class="browser pill">
+                <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search project..."
+                >
             </div>
 
-            <div class="filters">
-                <div class="filter-bubble">
-                    <label for="languageFilter">Language:</label>
-                    <select id="languageFilter">
-                        <option value="all">All Languages</option>
-                        <option value="MySQL">MySQL</option>
-                        <option value="Cisco">Cisco</option>
-                        <option value="JS">JS</option>
-                        <option value="CSS">CSS</option>
-                        <option value="C++">C++</option>
-                        <option value="C+">C+</option>
-                        <option value="HTML">HTML</option>
-                        <option value="Python">Python</option>
-                    </select>
-                </div>
-
-                <div class="filter-bubble">
-                    <label for="yearFilter">Year:</label>
-                    <select id="yearFilter">
-                        <option value="all">All Years</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- PROJECT LIST -->
-        <div class="projects-list">
-
-            <div class="project-row" data-language="HTML" data-year="2025">
-                <div class="project-name">Portfolio Web</div>
-                <div class="project-lang">HTML / CSS / JS</div>
-                <div class="project-date">2025</div>
+            <div class="project-list box" id="projectList">
+                <a href="project1.html" class="project-item">Project 1</a>
+                <a href="project1.html" class="project-item">Project 2</a>
+                <a href="#" class="project-item">Project 3</a>
+                <a href="#" class="project-item">Project 4</a>
             </div>
 
-            <div class="project-row" data-language="CSS" data-year="2024">
-                <div class="project-name">Network Lab</div>
-                <div class="project-lang">Cisco / Packet Tracer</div>
-                <div class="project-date">2024</div>
+        </section>
+
+        <!-- CENTER -->
+        <section class="center-column box">
+            <div class="center-img box">
+                <img src="img/project1.png" alt="Project image">
             </div>
 
-            <div class="project-row" data-language="JS" data-year="2024">
-                <div class="project-name">Database Design</div>
-                <div class="project-lang">MySQL</div>
-                <div class="project-date">2024</div>
+            <div class="center-text box">
+                <p>
+                    Featured project description.
+                    Click on a project to see full details.
+                </p>
+            </div>
+        </section>
+
+        <!-- RIGHT -->
+        <section class="right-column box">
+            <div class="right-text box">
+                <p>
+                    Additional information, technologies used,
+                    or short personal presentation.
+                </p>
             </div>
 
-            <div class="project-row" data-language="Bash" data-year="2023">
-                <div class="project-name">Linux Server</div>
-                <div class="project-lang">Bash</div>
-                <div class="project-date">2023</div>
+            <div class="right-img box">
+                <img src="img/project2.png" alt="Project image">
             </div>
-
-            <div class="project-row" data-language="C++" data-year="2023">
-                <div class="project-name">Security Basics</div>
-                <div class="project-lang">Cybersecurity</div>
-                <div class="project-date">2023</div>
-            </div>
-
-        </div>
+        </section>
 
     </main>
 

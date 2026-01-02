@@ -20,13 +20,16 @@
 
     <!-- TOP -->
     <header class="top-section">
-        <div class="pill name-box">
+
+        <!-- NAME (CLICKABLE FULL PILL) -->
+        <a href="index.html" class="pill name-box name-link">
             <h2>TAYLOR GERARD URIÑA PINCAY</h2>
-        </div>
+        </a>
 
         <div class="pill title-box">
             <h2>PORTFOLIO</h2>
         </div>
+
     </header>
 
     <!-- MAIN -->
@@ -36,16 +39,12 @@
         <section class="left-column box">
 
             <div class="browser pill">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search project..."
-                >
+                <input type="text" id="searchInput" placeholder="Search project...">
             </div>
 
             <div class="project-list box" id="projectList">
-                <a href="project1.html" class="project-item">Project 1</a>
-                <a href="project1.html" class="project-item">Project 2</a>
+                <a href="project1.html" class="project-item">Pagina Web</a>
+                <a href="#" class="project-item">Project 2</a>
                 <a href="#" class="project-item">Project 3</a>
                 <a href="#" class="project-item">Project 4</a>
             </div>
@@ -54,30 +53,34 @@
 
         <!-- CENTER -->
         <section class="center-column box">
-            <div class="center-img box">
-                <img src="img/project1.png" alt="Project image">
-            </div>
 
+            <!-- PROJECT IMG1 (CLICKABLE) -->
+            <a href="project1.html" class="project-image-link">
+                <div class="center-img box project-img-box">
+                    <img src="img/pagina-web.png" alt="Pagina Web project image">
+                </div>
+            </a>
+
+            <!-- PROJECT TEXT1 -->
             <div class="center-text box">
                 <p>
-                    Featured project description.
-                    Click on a project to see full details.
+                    <strong>Pagina Web</strong> — Pagina creada mediante IA y HTML.
                 </p>
             </div>
+
         </section>
 
         <!-- RIGHT -->
         <section class="right-column box">
-            <div class="right-text box">
-                <p>
-                    Additional information, technologies used,
-                    or short personal presentation.
-                </p>
+
+            <div class="right-text box placeholder-box">
+                <p class="placeholder-text">PROJECT TEXT2</p>
             </div>
 
-            <div class="right-img box">
-                <img src="img/project2.png" alt="Project image">
+            <div class="right-img box placeholder-box img-placeholder">
+                <p class="placeholder-text">PROJECT IMG2</p>
             </div>
+
         </section>
 
     </main>
@@ -91,17 +94,24 @@
 
         <div class="pill footer-right">
             <div class="contact-icons">
-                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank">
+
+                <a class="social-icon twitter-icon"
+                   href="https://twitter.com/TU_USUARIO"
+                   target="_blank">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
 
-                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank">
+                <a class="social-icon linkedin-icon"
+                   href="https://www.linkedin.com/in/TU_USUARIO"
+                   target="_blank">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
-                <a href="contact.html" class="contact-btn">
+                <!-- ✅ CONTACTE.HTML -->
+                <a href="contacte.html" class="contact-btn">
                     Contact Me
                 </a>
+
             </div>
         </div>
 
