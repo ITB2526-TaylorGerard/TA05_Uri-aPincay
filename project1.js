@@ -1,26 +1,30 @@
-const projectData = {
-    title: "Sistema de Gestión IT",
-    description: `Proyecto desarrollado como parte del portfolio personal.
-Incluye diseño moderno, estructura clara y funcionalidades en JavaScript.`,
-    image: "img/project1.png",
-    code: "https://github.com/Taylor-Portfolio",
-    twitter: "https://twitter.com/TU_USUARIO",
-    linkedin: "https://www.linkedin.com/in/TU_USUARIO"
-};
+const images = [
+    "img/project1-web.png",
+    "img/project1-web-2.png",
+    "img/project1-web-3.png"
+];
 
-document.addEventListener("DOMContentLoaded", () => {
+let currentIndex = 0;
 
-    document.getElementById("project-title").textContent = projectData.title;
-    document.getElementById("project-description").textContent = projectData.description;
+const carouselImage = document.getElementById("carouselImage");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const counter = document.getElementById("carouselCounter");
 
-    if (projectData.image) {
-        document.getElementById("project-img").src = projectData.image;
-    }
+function updateCarousel() {
+    carouselImage.src = images[currentIndex];
+    carouselImage.alt = `Project image ${currentIndex + 1}`;
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+}
 
-    document.getElementById("twitter-link").href = projectData.twitter;
-    document.getElementById("linkedin-link").href = projectData.linkedin;
-
-    document.getElementById("code-btn").addEventListener("click", () => {
-        window.open(projectData.code, "_blank");
-    });
+prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateCarousel();
 });
+
+nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateCarousel();
+});
+
+updateCarousel();

@@ -21,7 +21,6 @@
     <!-- TOP -->
     <header class="top-section">
 
-        <!-- NAME (CLICKABLE FULL PILL) -->
         <a href="index.html" class="pill name-box name-link">
             <h2>TAYLOR GERARD URIÑA PINCAY</h2>
         </a>
@@ -38,24 +37,99 @@
         <!-- LEFT -->
         <section class="left-column">
 
-            <!-- ✅ PROJECT IMAGE (NOMBRE DIFERENTE) -->
+            <!-- PROJECT IMAGE CAROUSEL -->
             <div class="box project-img-box">
-                <img src="img/project1-web.png" alt="Pagina Web project image">
+                <div class="carousel">
+
+                    <button class="carousel-btn prev" id="prevBtn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <img
+                        id="carouselImage"
+                        src="img/project1-web.png"
+                        alt="Project image"
+                        class="carousel-image"
+                    >
+
+                    <button class="carousel-btn next" id="nextBtn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div class="carousel-counter" id="carouselCounter">1 / 3</div>
+                </div>
             </div>
 
-            <a class="view-code-btn" href="#" target="_blank">
+            <!-- VIEW CODE -->
+            <a
+                class="view-code-btn"
+                href="https://github.com/ITB2526-TaylorGerard/TA05_Uri-aPincay"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 VIEW CODE
             </a>
 
         </section>
 
         <!-- RIGHT -->
-        <section class="right-column box">
+        <section class="right-column box scroll-box">
+
+            <h3>📄 Descripción del proyecto — Página Web de Portfolio Personal</h3>
+
             <p>
-                Proyecto desarrollado como parte del portfolio personal.
-                Página web creada mediante IA y HTML, con diseño moderno,
-                estructura clara y funcionalidades en JavaScript.
+                Este proyecto consiste en el desarrollo de una página web de portfolio personal,
+                creada con el objetivo de presentar de forma clara, visual y profesional los distintos
+                trabajos y proyectos realizados durante el curso, así como mostrar mis conocimientos
+                técnicos en desarrollo web.
             </p>
+
+            <p>
+                La web ha sido diseñada siguiendo una estructura modular y escalable, permitiendo añadir
+                nuevos proyectos de forma sencilla en el futuro. Se ha priorizado una experiencia de usuario
+                clara, una navegación intuitiva y un diseño moderno adaptado a cualquier tipo de dispositivo.
+            </p>
+
+            <h4>🛠️ Lenguajes y tecnologías utilizadas</h4>
+
+            <ul>
+                <li><strong>HTML5</strong>: estructuración semántica con header, main, section y footer.</li>
+                <li><strong>CSS3</strong>:
+                    <ul>
+                        <li>Layouts con Flexbox y Grid</li>
+                        <li>Diseño responsive</li>
+                        <li>Paleta de colores en tonos azules</li>
+                        <li>Animaciones suaves y efectos hover</li>
+                        <li>Escalado automático con unidades relativas y <code>clamp()</code></li>
+                    </ul>
+                </li>
+                <li><strong>JavaScript</strong>:
+                    <ul>
+                        <li>Carrusel de imágenes</li>
+                        <li>Navegación dinámica</li>
+                        <li>Base preparada para futuras funcionalidades</li>
+                    </ul>
+                </li>
+                <li><strong>Git & GitHub</strong>: control de versiones y publicación del proyecto.</li>
+            </ul>
+
+            <h4>🔄 Procedimiento de desarrollo</h4>
+
+            <ol>
+                <li>Diseño previo de la estructura</li>
+                <li>Maquetación HTML</li>
+                <li>Aplicación de estilos CSS</li>
+                <li>Interactividad con JavaScript</li>
+                <li>Optimización y pruebas</li>
+            </ol>
+
+            <h4>🎯 Objetivo del proyecto</h4>
+
+            <p>
+                Mostrar de forma profesional mis conocimientos en desarrollo web y servir como base
+                para futuros proyectos, entrevistas técnicas y presentaciones académicas.
+            </p>
+
         </section>
 
     </main>
@@ -69,11 +143,11 @@
 
         <div class="pill footer-right">
             <div class="contact-icons">
-                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank">
+                <a class="social-icon twitter-icon" href="#" target="_blank">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
 
-                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank">
+                <a class="social-icon linkedin-icon" href="#" target="_blank">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
