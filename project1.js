@@ -13,7 +13,6 @@ const counter = document.getElementById("carouselCounter");
 
 function updateCarousel() {
     carouselImage.src = images[currentIndex];
-    carouselImage.alt = `Project image ${currentIndex + 1}`;
     counter.textContent = `${currentIndex + 1} / ${images.length}`;
 }
 

@@ -1,60 +1,154 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacte | Taylor</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Taylor Gerard Uriña Pincay</title>
+
+    <link rel="stylesheet" href="contacte.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script defer src="contacte.js"></script>
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo">
-            <h1>Taylor</h1>
-            <h2>Web Developer</h2>
+<div class="project-wrapper">
+
+    <!-- TOP -->
+    <header class="top-section">
+
+        <!-- NAME (CLICKABLE FULL PILL) -->
+        <a href="index.html" class="pill name-box name-link">
+            <h2>TAYLOR GERARD URIÑA PINCAY</h2>
+        </a>
+
+        <div class="pill title-box">
+            <h2>CONTACT</h2>
         </div>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Inici</a></li>
-                <li><a href="projects.html">Projectes</a></li>
-                <li><a href="contacte.html">Contacte</a></li>
-            </ul>
-        </nav>
+
     </header>
 
     <!-- MAIN -->
-    <main>
+    <main class="main-section">
 
-        <h2>Formulari de contacte</h2>
+        <!-- LEFT -->
+        <section class="left-column box">
 
-        <form action="#" method="post">
+            <h3 class="section-title">Get in touch</h3>
+            <p class="muted">
+                Rellena el formulario y te preparo el email listo para enviar a
+                <strong>taylor.urina7e7@itb.cat</strong>.
+            </p>
 
-            <label>Nom</label>
-            <input type="text" required>
+            <a class="home-btn" href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
 
-            <label>Email</label>
-            <input type="email" required>
+            <div class="tip-box">
+                <p class="tip-title">
+                    <i class="fa-solid fa-circle-info"></i> Nota
+                </p>
+                <p class="tip-text">
+                    Se validará que el correo sea un <strong>Gmail válido</strong>
+                    (termine en <strong>@gmail.com</strong>).
+                </p>
+            </div>
 
-            <label>Missatge</label>
-            <textarea required></textarea>
+        </section>
 
-            <button type="submit">Enviar</button>
+        <!-- RIGHT -->
+        <section class="right-column box">
 
-        </form>
+            <h3 class="section-title">Contact Form</h3>
+
+            <form id="contactForm" class="contact-form" novalidate>
+
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="firstName">Nombre <span class="req">*</span></label>
+                        <input type="text" id="firstName" placeholder="Tu nombre" required />
+                        <small class="error" data-error-for="firstName"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="lastName">Apellido <span class="req">*</span></label>
+                        <input type="text" id="lastName" placeholder="Tu apellido" required />
+                        <small class="error" data-error-for="lastName"></small>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="field">
+                        <label for="phone">Número (opcional)</label>
+                        <input type="tel" id="phone" placeholder="+34 600 123 456" />
+                        <small class="helper">Puedes dejarlo vacío.</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="gmail">Gmail <span class="req">*</span></label>
+                        <input type="email" id="gmail" placeholder="tunombre@gmail.com" required />
+                        <small class="error" data-error-for="gmail"></small>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="subject">Asunto <span class="req">*</span></label>
+                    <input type="text" id="subject" placeholder="Motivo del contacto" required />
+                    <small class="error" data-error-for="subject"></small>
+                </div>
+
+                <div class="field">
+                    <label for="message">Mensaje <span class="req">*</span></label>
+                    <textarea id="message" rows="7" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                    <small class="error" data-error-for="message"></small>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Enviar
+                    </button>
+
+                    <p class="success" id="successMsg" aria-live="polite"></p>
+                </div>
+
+            </form>
+
+        </section>
 
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2025 Taylor – Tots els drets reservats</p>
-        <div class="socials">
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-            <a href="#">Email</a>
+    <footer class="footer-section">
+
+        <div class="pill footer-left">
+            <p>© 2025 — Portfolio by Taylor</p>
         </div>
+
+        <div class="pill footer-right">
+            <div class="contact-icons">
+                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="contacte.html" class="contact-btn">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
     </footer>
+
+</div>
 
 </body>
 </html>
