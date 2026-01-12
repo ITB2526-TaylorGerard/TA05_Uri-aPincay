@@ -1,86 +1,205 @@
 const form = document.getElementById("contactForm");
-const successMsg = document.getElementById("successMsg");
 
-const nameInput = document.getElementById("name");
-const surnameInput = document.getElementById("surname");
-const phoneInput = document.getElementById("phone");
-const gmailInput = document.getElementById("gmail");
-const subjectInput = document.getElementById("subject");
-const messageInput = document.getElementById("message");
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const phone = document.getElementById("phone");
+const gmail = document.getElementById("gmail");
+const subject = document.getElementById("subject");
+const message = document.getElementById("message");
 
-const errName = document.getElementById("errName");
-const errSurname = document.getElementById("errSurname");
+const errFirstName = document.getElementById("errFirstName");
+const errLastName = document.getElementById("errLastName");
 const errGmail = document.getElementById("errGmail");
 const errSubject = document.getElementById("errSubject");
 const errMessage = document.getElementById("errMessage");
 
+const overlay = document.getElementById("successOverlay");
+const snowCanvas = document.getElementById("snowCanvas");
+
+const TO_EMAIL = "taylor.urina7e7@itb.cat";
+
+// ---------- VALIDATION ----------
+function setError(el, msg) {
+    el.textContent = msg;
+}
+
 function clearErrors() {
-    errName.textContent = "";
-    errSurname.textContent = "";
-    errGmail.textContent = "";
-    errSubject.textContent = "";
-    errMessage.textContent = "";
+    setError(errFirstName, "");
+    setError(errLastName, "");
+    setError(errGmail, "");
+    setError(errSubject, "");
+    setError(errMessage, "");
 }
 
-function isValidGmail(email) {
-    return /^[^\s@]+@gmail\.com$/i.test(email.trim());
+function isValidGmail(value) {
+    const v = value.trim().toLowerCase();
+    // gmail valido + termina en @gmail.com
+    return /^[a-z0-9._%+-]+@gmail\.com$/.test(v);
 }
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
+function validate() {
     clearErrors();
-    successMsg.classList.remove("show");
-
     let ok = true;
 
-    if (nameInput.value.trim() === "") {
-        errName.textContent = "Nombre obligatorio.";
+    if (!firstName.value.trim()) {
+        setError(errFirstName, "Nombre obligatorio.");
         ok = false;
     }
 
-    if (surnameInput.value.trim() === "") {
-        errSurname.textContent = "Apellido obligatorio.";
+    if (!lastName.value.trim()) {
+        setError(errLastName, "Apellido obligatorio.");
         ok = false;
     }
 
-    if (!isValidGmail(gmailInput.value)) {
-        errGmail.textContent = "Introduce un Gmail válido (termina en @gmail.com).";
+    if (!gmail.value.trim()) {
+        setError(errGmail, "Gmail obligatorio.");
+        ok = false;
+    } else if (!isValidGmail(gmail.value)) {
+        setError(errGmail, "Introduce un Gmail válido (termina en @gmail.com).");
         ok = false;
     }
 
-    if (subjectInput.value.trim() === "") {
-        errSubject.textContent = "Asunto obligatorio.";
+    if (!subject.value.trim()) {
+        setError(errSubject, "Asunto obligatorio.");
         ok = false;
     }
 
-    if (messageInput.value.trim() === "") {
-        errMessage.textContent = "Mensaje obligatorio.";
+    if (!message.value.trim()) {
+        setError(errMessage, "Mensaje obligatorio.");
         ok = false;
     }
 
-    if (!ok) return;
+    return ok;
+}
 
-    const to = "taylor.urina7e7@itb.cat";
-    const fullName = `${nameInput.value.trim()} ${surnameInput.value.trim()}`.trim();
-    const phone = phoneInput.value.trim();
+// ---------- SNOW ANIMATION ----------
+let snowRAF = null;
+let snowStopTimer = null;
 
-    const subject = `Contacto: ${subjectInput.value.trim()}`;
+function startSnow(durationMs = 5000) {
+    // Canvas sizing
+    const ctx = snowCanvas.getContext("2d");
+    const dpr = window.devicePixelRatio || 1;
 
-    const bodyLines = [
-        `Nombre: ${fullName}`,
-        `Gmail: ${gmailInput.value.trim()}`,
-        phone ? `Número: ${phone}` : null,
-        "",
-        "Mensaje:",
-        messageInput.value.trim()
-    ].filter(Boolean);
+    function resizeCanvas() {
+        const rect = snowCanvas.getBoundingClientRect();
+        snowCanvas.width = Math.floor(rect.width * dpr);
+        snowCanvas.height = Math.floor(rect.height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
 
-    const body = bodyLines.join("\n");
+    resizeCanvas();
 
-    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const W = snowCanvas.getBoundingClientRect().width;
+    const H = snowCanvas.getBoundingClientRect().height;
 
+    // Create flakes
+    const flakesCount = Math.min(160, Math.max(70, Math.floor((W * H) / 12000)));
+    const flakes = Array.from({ length: flakesCount }, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: 1 + Math.random() * 3.2,
+        vy: 0.8 + Math.random() * 2.3,
+        vx: -0.4 + Math.random() * 0.8,
+        drift: Math.random() * Math.PI * 2
+    }));
+
+    let lastT = performance.now();
+
+    function draw(t) {
+        const dt = Math.min(32, t - lastT);
+        lastT = t;
+
+        ctx.clearRect(0, 0, W, H);
+
+        // subtle glow
+        ctx.save();
+        ctx.globalAlpha = 0.95;
+
+        for (const f of flakes) {
+            f.drift += 0.0025 * dt;
+
+            f.x += f.vx + Math.sin(f.drift) * 0.25;
+            f.y += f.vy * (dt / 16);
+
+            if (f.y > H + 10) {
+                f.y = -10;
+                f.x = Math.random() * W;
+            }
+            if (f.x < -10) f.x = W + 10;
+            if (f.x > W + 10) f.x = -10;
+
+            ctx.beginPath();
+            ctx.fillStyle = "rgba(234, 243, 255, 0.90)";
+            ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        ctx.restore();
+        snowRAF = requestAnimationFrame(draw);
+    }
+
+    snowRAF = requestAnimationFrame(draw);
+
+    // Keep canvas correct on resize (during overlay)
+    const onResize = () => resizeCanvas();
+    window.addEventListener("resize", onResize, { passive: true });
+
+    // Stop after duration
+    snowStopTimer = setTimeout(() => {
+        stopSnow();
+        window.removeEventListener("resize", onResize);
+    }, durationMs);
+}
+
+function stopSnow() {
+    if (snowRAF) cancelAnimationFrame(snowRAF);
+    snowRAF = null;
+    if (snowStopTimer) clearTimeout(snowStopTimer);
+    snowStopTimer = null;
+
+    // clear canvas
+    const ctx = snowCanvas.getContext("2d");
+    const rect = snowCanvas.getBoundingClientRect();
+    ctx.clearRect(0, 0, rect.width, rect.height);
+}
+
+// ---------- OVERLAY ----------
+function showSuccessOverlay() {
+    overlay.classList.add("active");
+    overlay.setAttribute("aria-hidden", "false");
+
+    startSnow(5000);
+
+    // Hide after 5s
+    setTimeout(() => {
+        overlay.classList.remove("active");
+        overlay.setAttribute("aria-hidden", "true");
+        stopSnow();
+    }, 5000);
+}
+
+// ---------- SUBMIT ----------
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!validate()) return;
+
+    // build mailto
+    const fullName = `${firstName.value.trim()} ${lastName.value.trim()}`.trim();
+    const phoneText = phone.value.trim() ? `Phone: ${phone.value.trim()}\n` : "";
+    const fromText = `From: ${fullName}\nGmail: ${gmail.value.trim()}\n${phoneText}\n`;
+
+    const body = `${fromText}Message:\n${message.value.trim()}`;
+
+    const mailto = `mailto:${encodeURIComponent(TO_EMAIL)}?subject=${encodeURIComponent(subject.value.trim())}&body=${encodeURIComponent(body)}`;
+
+    // show overlay animation
+    showSuccessOverlay();
+
+    // open email client
     window.location.href = mailto;
 
-    successMsg.classList.add("show");
+    // reset fields (optional)
     form.reset();
 });

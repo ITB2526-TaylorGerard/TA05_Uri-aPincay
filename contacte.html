@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact — Taylor Gerard Uriña Pincay</title>
 
-    <link rel="stylesheet" href="contacte.css">
+    <link rel="stylesheet" href="contacte.css" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <script defer src="contacte.js"></script>
 </head>
@@ -21,7 +21,7 @@
     <!-- TOP -->
     <header class="top-section">
 
-        <!-- NAME -->
+        <!-- NAME (CLICKABLE FULL PILL) -->
         <a href="index.html" class="pill name-box name-link">
             <h2>TAYLOR GERARD URIÑA PINCAY</h2>
         </a>
@@ -35,98 +35,91 @@
     <!-- MAIN -->
     <main class="main-section">
 
-        <!-- LEFT COLUMN -->
-        <section class="box">
+        <!-- LEFT -->
+        <section class="left-column box">
+            <h3 class="section-title">Navigation</h3>
 
-            <h3 class="form-title">Navigation</h3>
-
-            <!-- ✅ NAV BUTTONS -->
             <div class="nav-buttons">
-
-                <a href="index.html" class="nav-btn">
+                <a class="nav-btn" href="index.html">
                     <i class="fa-solid fa-house"></i>
                     Inicio
                 </a>
 
-                <a href="projects.html" class="nav-btn">
-                    <i class="fa-solid fa-folder-open"></i>
+                <a class="nav-btn" href="projects.html">
+                    <i class="fa-solid fa-list-check"></i>
                     Projects
                 </a>
 
-                <a href="https://github.com/ITB2526-TaylorGerard"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="nav-btn">
+                <a class="nav-btn" href="https://github.com/ITB2526-TaylorGerard" target="_blank" rel="noopener noreferrer">
                     <i class="fa-brands fa-github"></i>
                     GitHub
                 </a>
-
             </div>
 
+            <div class="info-card">
+                <div class="info-title">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Info
+                </div>
+                <p class="info-text">
+                    Rellena el formulario y se abrirá tu correo para enviar el mensaje a
+                    <strong>taylor.urina7e7@itb.cat</strong>.
+                </p>
+            </div>
         </section>
 
-        <!-- RIGHT COLUMN -->
-        <section class="box">
+        <!-- RIGHT -->
+        <section class="right-column box">
+            <h3 class="section-title">Contact Form</h3>
 
-            <h3 class="form-title">Contact Form</h3>
-
-            <form id="contactForm" novalidate>
+            <form id="contactForm" class="contact-form" novalidate>
 
                 <div class="grid-2">
-
                     <div class="field">
-                        <label>Nombre <span>*</span></label>
-                        <input type="text" id="name" placeholder="Tu nombre" required>
+                        <label for="firstName">Nombre <span class="req">*</span></label>
+                        <input id="firstName" name="firstName" type="text" placeholder="Tu nombre" required />
+                        <small class="error" id="errFirstName"></small>
                     </div>
 
                     <div class="field">
-                        <label>Apellido <span>*</span></label>
-                        <input type="text" id="surname" placeholder="Tu apellido" required>
+                        <label for="lastName">Apellido <span class="req">*</span></label>
+                        <input id="lastName" name="lastName" type="text" placeholder="Tu apellido" required />
+                        <small class="error" id="errLastName"></small>
                     </div>
-
                 </div>
 
                 <div class="grid-2">
-
                     <div class="field">
-                        <label>Número (opcional)</label>
-                        <input type="tel" id="phone" placeholder="+34 600 123 456">
-                        <span class="hint">Puedes dejarlo vacío</span>
+                        <label for="phone">Número (opcional)</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+34 600 123 456" />
                     </div>
 
                     <div class="field">
-                        <label>Gmail <span>*</span></label>
-                        <input type="email" id="email" placeholder="tunombre@gmail.com" required>
-                        <span class="hint">Debe terminar en @gmail.com</span>
-                        <span class="error" id="emailError"></span>
+                        <label for="gmail">Gmail <span class="req">*</span></label>
+                        <input id="gmail" name="gmail" type="email" placeholder="tunombre@gmail.com" required />
+                        <small class="hint">Debe terminar en <strong>@gmail.com</strong></small>
+                        <small class="error" id="errGmail"></small>
                     </div>
-
                 </div>
 
                 <div class="field">
-                    <label>Asunto <span>*</span></label>
-                    <input type="text" id="subject" placeholder="Motivo del contacto" required>
+                    <label for="subject">Asunto <span class="req">*</span></label>
+                    <input id="subject" name="subject" type="text" placeholder="Motivo del contacto" required />
+                    <small class="error" id="errSubject"></small>
                 </div>
 
                 <div class="field">
-                    <label>Mensaje <span>*</span></label>
-                    <textarea id="message" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                    <label for="message">Mensaje <span class="req">*</span></label>
+                    <textarea id="message" name="message" rows="7" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                    <small class="error" id="errMessage"></small>
                 </div>
 
-                <div class="actions">
-                    <button type="submit" class="send-btn">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        Enviar
-                    </button>
-
-                    <div class="success" id="successMsg">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Mensaje preparado. Se abrirá tu correo.
-                    </div>
-                </div>
+                <button type="submit" class="send-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Enviar
+                </button>
 
             </form>
-
         </section>
 
     </main>
@@ -140,28 +133,35 @@
 
         <div class="pill footer-right">
             <div class="contact-icons">
-
-                <a class="social-icon twitter-icon"
-                   href="https://twitter.com/TU_USUARIO"
-                   target="_blank">
+                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
 
-                <a class="social-icon linkedin-icon"
-                   href="https://www.linkedin.com/in/taylor-gerard-uriña-pincay-5751743a3/"
-                   target="_blank">
+                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
                 <a href="contacte.html" class="contact-btn">
                     Contact Me
                 </a>
-
             </div>
         </div>
 
     </footer>
 
+</div>
+
+<!-- ✅ OVERLAY + SNOW + MODAL -->
+<div id="successOverlay" class="overlay" aria-hidden="true">
+    <canvas id="snowCanvas"></canvas>
+
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Mensaje enviado">
+        <div class="modal-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="modal-title">¡Mensaje enviado!</div>
+        <div class="modal-subtitle">Se abrirá tu correo para enviarlo.</div>
+    </div>
 </div>
 
 </body>
