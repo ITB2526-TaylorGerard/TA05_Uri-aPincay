@@ -44,18 +44,17 @@ body {
     color: #8FD3FF;
 }
 
-/* CLICKABLE */
+/* CLICKABLE NAME */
 .name-link {
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: inherit;
 }
 
 .name-link:hover {
-    box-shadow: 0 0 15px rgba(75, 176, 255, 0.6);
     cursor: pointer;
+    box-shadow: 0 0 15px rgba(75, 176, 255, 0.6);
 }
 
 /* MAIN */
@@ -73,25 +72,41 @@ body {
     background: rgba(15, 22, 45, 0.85);
 }
 
-/* LEFT */
+/* LEFT COLUMN */
 .left-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* SEARCH */
+/* SEARCH BAR (🔥 ARREGLADA) */
 .browser {
+    height: 60px;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .browser input {
     width: 90%;
-    height: 36px;
-    border-radius: 20px;
-    border: none;
-    padding: 0 16px;
+    height: 38px;
+    border-radius: 22px;
+    border: 2px solid rgba(75, 176, 255, 0.35);
+    background: rgba(10, 15, 31, 0.8);
+    color: #EAF3FF;
+    outline: none;
+    padding: 0 18px;
+    font-size: 1rem;
+    transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+.browser input::placeholder {
+    color: rgba(234, 243, 255, 0.55);
+}
+
+.browser input:focus {
+    border-color: #4BB0FF;
+    box-shadow: 0 0 12px rgba(75, 176, 255, 0.45);
 }
 
 /* PROJECT LIST */
@@ -106,7 +121,7 @@ body {
     text-decoration: none;
     padding: 10px;
     border-radius: 10px;
-    transition: 0.3s;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .project-item:hover {
@@ -114,39 +129,43 @@ body {
     color: white;
 }
 
-.project-item.disabled {
-    opacity: 0.4;
-    pointer-events: none;
-}
-
-/* CENTER */
+/* CENTER COLUMN */
 .center-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* CLICKABLE IMAGE */
+.project-image-link {
+    display: block;
+    text-decoration: none;
+}
+
 .project-img-box img {
     width: 100%;
     border-radius: 12px;
+    display: block;
 }
 
 .project-image-link:hover .project-img-box {
     box-shadow: 0 0 18px rgba(75, 176, 255, 0.55);
     transform: scale(1.01);
+    transition: 0.25s ease;
 }
 
-/* RIGHT */
+/* RIGHT COLUMN */
 .right-column {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* PLACEHOLDERS */
 .placeholder-box {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-height: 120px;
 }
 
@@ -156,7 +175,9 @@ body {
 
 .placeholder-text {
     color: #8FD3FF;
-    opacity: 0.7;
+    font-weight: bold;
+    letter-spacing: 1px;
+    opacity: 0.8;
 }
 
 /* FOOTER */
@@ -171,7 +192,7 @@ body {
     width: 45%;
 }
 
-/* CONTACT */
+/* CONTACT ICONS */
 .contact-icons {
     display: flex;
     align-items: center;
@@ -182,16 +203,26 @@ body {
 .social-icon {
     width: 42px;
     height: 42px;
-    border-radius: 50%;
-    background: #122A4D;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 50%;
+    background: #122A4D;
     color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-icon:hover {
     transform: scale(1.15);
+}
+
+.twitter-icon:hover {
+    color: #1DA1F2;
+}
+
+.linkedin-icon:hover {
+    color: #0077B5;
 }
 
 .contact-btn {
@@ -201,6 +232,12 @@ body {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(75, 176, 255, 0.6);
 }
 
 /* RESPONSIVE */
