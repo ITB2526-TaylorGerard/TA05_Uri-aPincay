@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects — Taylor Gerard Uriña Pincay</title>
 
-    <link rel="stylesheet" href="projects.css" />
+    <link rel="stylesheet" href="projects.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script defer src="projects.js"></script>
 </head>
 
 <body>
@@ -18,6 +20,7 @@
 
     <!-- TOP -->
     <header class="top-section">
+        <!-- NAME (CLICKABLE FULL PILL) -->
         <a href="index.html" class="pill name-box name-link">
             <h2>TAYLOR GERARD URIÑA PINCAY</h2>
         </a>
@@ -28,12 +31,12 @@
     </header>
 
     <!-- PROJECTS SECTION -->
-    <main class="projects-section box">
+    <main class="projects-section">
 
         <!-- FILTERS -->
         <div class="filters-container">
-            <div class="filters pill">
-                <input type="text" id="filterInput" placeholder="Search project..." />
+            <div class="filters pill search-pill">
+                <input type="text" id="filterInput" placeholder="Search project...">
             </div>
 
             <div class="filters">
@@ -45,8 +48,8 @@
                         <option value="Cisco">Cisco</option>
                         <option value="JS">JS</option>
                         <option value="CSS">CSS</option>
-                        <option value="C++">C++</option>
                         <option value="C+">C+</option>
+                        <option value="C++">C++</option>
                         <option value="HTML">HTML</option>
                         <option value="Python">Python</option>
                     </select>
@@ -64,43 +67,95 @@
             </div>
         </div>
 
-        <!-- PROJECT LIST -->
-        <div class="projects-list">
+        <!-- ✅ SCROLLABLE PROJECT LIST WRAPPER -->
+        <div class="projects-scroll">
+            <div class="projects-list">
 
-            <!-- ✅ IMPORTANT: data-language incluye TODO lo usado -->
-            <div class="project-row"
-                 data-language="HTML, CSS, JS"
-                 data-year="2025"
-                 onclick="window.location.href='project1.html'">
-                <div class="project-name">Pagina Web</div>
-                <div class="project-lang">HTML / CSS / JS</div>
-                <div class="project-date">2025</div>
+                <!-- 1 -->
+                <div class="project-row" data-language="HTML, CSS, JS" data-year="2025" data-link="project1.html">
+                    <div class="project-name">Pagina Web</div>
+                    <div class="project-lang">HTML / CSS / JS</div>
+                    <div class="project-date">2025</div>
+                </div>
+
+                <!-- 2 -->
+                <div class="project-row" data-language="Cisco" data-year="2024">
+                    <div class="project-name">Rack VLAN Lab</div>
+                    <div class="project-lang">Cisco</div>
+                    <div class="project-date">2024</div>
+                </div>
+
+                <!-- 3 -->
+                <div class="project-row" data-language="MySQL" data-year="2024">
+                    <div class="project-name">SQL Normalization Model</div>
+                    <div class="project-lang">MySQL</div>
+                    <div class="project-date">2024</div>
+                </div>
+
+                <!-- 4 -->
+                <div class="project-row" data-language="Python" data-year="2025">
+                    <div class="project-name">Log Analyzer</div>
+                    <div class="project-lang">Python</div>
+                    <div class="project-date">2025</div>
+                </div>
+
+                <!-- 5 -->
+                <div class="project-row" data-language="Python, MySQL" data-year="2025">
+                    <div class="project-name">Inventory CLI Tool</div>
+                    <div class="project-lang">Python / MySQL</div>
+                    <div class="project-date">2025</div>
+                </div>
+
+                <!-- 6 -->
+                <div class="project-row" data-language="CSS, HTML" data-year="2025">
+                    <div class="project-name">Responsive UI Components</div>
+                    <div class="project-lang">HTML / CSS</div>
+                    <div class="project-date">2025</div>
+                </div>
+
+                <!-- 7 -->
+                <div class="project-row" data-language="JS, HTML, CSS" data-year="2024">
+                    <div class="project-name">ToDo App (LocalStorage)</div>
+                    <div class="project-lang">JS / HTML / CSS</div>
+                    <div class="project-date">2024</div>
+                </div>
+
+                <!-- 8 -->
+                <div class="project-row" data-language="Cisco" data-year="2023">
+                    <div class="project-name">Static Routing Practice</div>
+                    <div class="project-lang">Cisco</div>
+                    <div class="project-date">2023</div>
+                </div>
+
+                <!-- 9 -->
+                <div class="project-row" data-language="C++" data-year="2024">
+                    <div class="project-name">OOP Mini System</div>
+                    <div class="project-lang">C++</div>
+                    <div class="project-date">2024</div>
+                </div>
+
+                <!-- 10 -->
+                <div class="project-row" data-language="C+" data-year="2023">
+                    <div class="project-name">Basics Exercises</div>
+                    <div class="project-lang">C+</div>
+                    <div class="project-date">2023</div>
+                </div>
+
+                <!-- 11 -->
+                <div class="project-row" data-language="MySQL, JS" data-year="2025">
+                    <div class="project-name">Simple Admin Dashboard</div>
+                    <div class="project-lang">MySQL / JS</div>
+                    <div class="project-date">2025</div>
+                </div>
+
+                <!-- 12 -->
+                <div class="project-row" data-language="Python" data-year="2024">
+                    <div class="project-name">Network Scanner Script</div>
+                    <div class="project-lang">Python</div>
+                    <div class="project-date">2024</div>
+                </div>
+
             </div>
-
-            <div class="project-row" data-language="Cisco" data-year="2024">
-                <div class="project-name">Network Lab</div>
-                <div class="project-lang">Cisco / Packet Tracer</div>
-                <div class="project-date">2024</div>
-            </div>
-
-            <div class="project-row" data-language="MySQL" data-year="2024">
-                <div class="project-name">Database Design</div>
-                <div class="project-lang">MySQL</div>
-                <div class="project-date">2024</div>
-            </div>
-
-            <div class="project-row" data-language="Python" data-year="2023">
-                <div class="project-name">Linux Automation</div>
-                <div class="project-lang">Python</div>
-                <div class="project-date">2023</div>
-            </div>
-
-            <div class="project-row" data-language="C++" data-year="2023">
-                <div class="project-name">Security Basics</div>
-                <div class="project-lang">C++</div>
-                <div class="project-date">2023</div>
-            </div>
-
         </div>
 
     </main>
@@ -113,11 +168,11 @@
 
         <div class="pill footer-right">
             <div class="contact-icons">
-                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank" rel="noopener">
+                <a class="social-icon twitter-icon" href="https://twitter.com/TU_USUARIO" target="_blank">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
 
-                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/taylor-gerard-uriña-pincay-5751743a3/" target="_blank" rel="noopener">
+                <a class="social-icon linkedin-icon" href="https://www.linkedin.com/in/TU_USUARIO" target="_blank">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
@@ -128,7 +183,5 @@
 
 </div>
 
-<!-- ✅ IMPORTANTE: ponemos el JS al final para que SIEMPRE funcione -->
-<script src="projects.js"></script>
 </body>
 </html>
