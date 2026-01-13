@@ -209,7 +209,7 @@ body {
     box-shadow: 0 0 12px rgba(75, 176, 255, 0.5);
 }
 
-/* FOOTER (igual que index) */
+/* FOOTER */
 .footer-section {
     display: flex;
     justify-content: space-between;
@@ -263,12 +263,39 @@ body {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.contact-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px rgba(75, 176, 255, 0.6);
+/* --- ESTILOS PARA MÓVIL --- */
+@media (max-width: 850px) {
+    .main-section {
+        grid-template-columns: 1fr; /* Una sola columna en móvil */
+    }
+
+    .top-section, .footer-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .name-box, .title-box, .footer-left, .footer-right {
+        width: 100%;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr; /* Inputs del formulario uno debajo del otro */
+    }
+
+    .send-btn {
+        width: 100%; /* Botón grande para móviles */
+        justify-content: center;
+    }
+
+    .project-wrapper {
+        margin: 10px auto;
+        padding: 15px;
+    }
 }
 
-/* ✅ OVERLAY + MODAL + SNOW */
+/* OVERLAY & MODAL */
 .overlay {
     position: fixed;
     inset: 0;
@@ -301,7 +328,6 @@ body {
     background: rgba(10, 15, 31, 0.92);
     box-shadow: 0 0 24px rgba(75, 176, 255, 0.25);
     text-align: center;
-    animation: popIn 0.18s ease-out;
 }
 
 .modal-icon {
@@ -315,46 +341,4 @@ body {
     font-weight: 900;
     color: #EAF3FF;
     margin-bottom: 8px;
-}
-
-.modal-subtitle {
-    color: rgba(234, 243, 255, 0.8);
-    line-height: 1.35;
-}
-
-@keyframes popIn {
-    from { transform: scale(0.97); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .main-section {
-        grid-template-columns: 1fr;
-    }
-
-    .top-section {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .name-box,
-    .title-box {
-        width: 100%;
-    }
-
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-section {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .footer-left,
-    .footer-right {
-        width: 100%;
-        text-align: center;
-    }
 }

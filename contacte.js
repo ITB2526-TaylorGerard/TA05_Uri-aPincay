@@ -77,7 +77,6 @@ let snowRAF = null;
 let snowStopTimer = null;
 
 function startSnow(durationMs = 5000) {
-    // Canvas sizing
     const ctx = snowCanvas.getContext("2d");
     const dpr = window.devicePixelRatio || 1;
 
@@ -93,7 +92,6 @@ function startSnow(durationMs = 5000) {
     const W = snowCanvas.getBoundingClientRect().width;
     const H = snowCanvas.getBoundingClientRect().height;
 
-    // Create flakes
     const flakesCount = Math.min(160, Math.max(70, Math.floor((W * H) / 12000)));
     const flakes = Array.from({ length: flakesCount }, () => ({
         x: Math.random() * W,
@@ -111,14 +109,11 @@ function startSnow(durationMs = 5000) {
         lastT = t;
 
         ctx.clearRect(0, 0, W, H);
-
-        // subtle glow
         ctx.save();
         ctx.globalAlpha = 0.95;
 
         for (const f of flakes) {
             f.drift += 0.0025 * dt;
-
             f.x += f.vx + Math.sin(f.drift) * 0.25;
             f.y += f.vy * (dt / 16);
 
@@ -141,11 +136,9 @@ function startSnow(durationMs = 5000) {
 
     snowRAF = requestAnimationFrame(draw);
 
-    // Keep canvas correct on resize (during overlay)
     const onResize = () => resizeCanvas();
     window.addEventListener("resize", onResize, { passive: true });
 
-    // Stop after duration
     snowStopTimer = setTimeout(() => {
         stopSnow();
         window.removeEventListener("resize", onResize);
@@ -158,7 +151,6 @@ function stopSnow() {
     if (snowStopTimer) clearTimeout(snowStopTimer);
     snowStopTimer = null;
 
-    // clear canvas
     const ctx = snowCanvas.getContext("2d");
     const rect = snowCanvas.getBoundingClientRect();
     ctx.clearRect(0, 0, rect.width, rect.height);
@@ -171,7 +163,6 @@ function showSuccessOverlay() {
 
     startSnow(5000);
 
-    // Hide after 5s
     setTimeout(() => {
         overlay.classList.remove("active");
         overlay.setAttribute("aria-hidden", "true");
@@ -185,7 +176,6 @@ form.addEventListener("submit", (e) => {
 
     if (!validate()) return;
 
-    // build mailto
     const fullName = `${firstName.value.trim()} ${lastName.value.trim()}`.trim();
     const phoneText = phone.value.trim() ? `Phone: ${phone.value.trim()}\n` : "";
     const fromText = `From: ${fullName}\nGmail: ${gmail.value.trim()}\n${phoneText}\n`;
@@ -194,12 +184,7 @@ form.addEventListener("submit", (e) => {
 
     const mailto = `mailto:${encodeURIComponent(TO_EMAIL)}?subject=${encodeURIComponent(subject.value.trim())}&body=${encodeURIComponent(body)}`;
 
-    // show overlay animation
     showSuccessOverlay();
-
-    // open email client
     window.location.href = mailto;
-
-    // reset fields (optional)
     form.reset();
 });
