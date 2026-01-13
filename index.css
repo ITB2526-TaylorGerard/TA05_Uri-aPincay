@@ -28,6 +28,9 @@ body {
     border-radius: 40px;
     padding: 12px 22px;
     background: rgba(26, 115, 232, 0.15);
+    display: flex; /* Asegura centrado de contenido interno */
+    align-items: center;
+    justify-content: center;
 }
 
 /* TOP */
@@ -35,6 +38,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    gap: 20px;
 }
 
 .name-box,
@@ -185,11 +189,15 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    gap: 20px;
 }
 
 .footer-left,
 .footer-right {
     width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* CONTACT ICONS */
@@ -198,6 +206,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 18px;
+    width: 100%;
 }
 
 .social-icon {
@@ -211,6 +220,7 @@ body {
     color: white;
     font-size: 20px;
     transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
 }
 
 .social-icon:hover {
@@ -240,30 +250,63 @@ body {
     box-shadow: 0 0 12px rgba(75, 176, 255, 0.6);
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE ARREGLADO */
 @media (max-width: 1024px) {
     .main-section {
         grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 600px) {
+    /* --- ARRIBA --- */
     .top-section {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
     }
 
     .name-box,
     .title-box {
         width: 100%;
+        padding: 10px 15px;
+        box-sizing: border-box;
     }
 
+    .name-box h2, .title-box h2 {
+        font-size: clamp(0.9rem, 4.5vw, 1.2rem);
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* --- ABAJO --- */
     .footer-section {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
+        margin-top: 25px;
     }
 
     .footer-left,
     .footer-right {
         width: 100%;
+        padding: 15px 10px;
+        box-sizing: border-box;
         text-align: center;
+    }
+
+    .contact-icons {
+        gap: 12px;
+        flex-wrap: wrap; /* Para que no se corte en pantallas muy pequeñas */
+    }
+
+    .contact-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .project-wrapper {
+        width: 92%;
+        margin: 10px auto;
+        padding: 15px;
     }
 }

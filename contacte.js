@@ -33,7 +33,6 @@ function clearErrors() {
 
 function isValidGmail(value) {
     const v = value.trim().toLowerCase();
-    // gmail valido + termina en @gmail.com
     return /^[a-z0-9._%+-]+@gmail\.com$/.test(v);
 }
 
@@ -109,11 +108,13 @@ function startSnow(durationMs = 5000) {
         lastT = t;
 
         ctx.clearRect(0, 0, W, H);
+
         ctx.save();
         ctx.globalAlpha = 0.95;
 
         for (const f of flakes) {
             f.drift += 0.0025 * dt;
+
             f.x += f.vx + Math.sin(f.drift) * 0.25;
             f.y += f.vy * (dt / 16);
 
