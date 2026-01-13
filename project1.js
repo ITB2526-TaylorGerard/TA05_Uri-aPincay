@@ -1,38 +1,32 @@
-const filterInput = document.getElementById("filterInput");
-const languageFilter = document.getElementById("languageFilter");
-const yearFilter = document.getElementById("yearFilter");
-const projectRows = document.querySelectorAll(".project-row");
+document.addEventListener('DOMContentLoaded', () => {
+    // Array con las rutas de tus imágenes
+    const images = [
+        "img/project1-web.png",
+        "img/project1-2web.png",
+        "img/project1-3web.png"
+    ];
 
-filterInput.addEventListener("keyup", filterProjects);
-languageFilter.addEventListener("change", filterProjects);
-yearFilter.addEventListener("change", filterProjects);
+    let currentIndex = 0;
 
-projectRows.forEach(row => {
-    row.addEventListener("click", () => {
-        const link = row.dataset.link;
-        if (link) window.location.href = link;
+    const carouselImg = document.getElementById('carouselImage');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const counter = document.getElementById('carouselCounter');
+
+    // Función para actualizar la vista
+    function updateCarousel() {
+        carouselImg.src = images[currentIndex];
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    }
+
+    // Eventos de botones
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
     });
 });
-
-function filterProjects() {
-    const nameValue = filterInput.value.toLowerCase().trim();
-    const languageValue = languageFilter.value.toLowerCase();
-    const yearValue = yearFilter.value;
-
-    projectRows.forEach(row => {
-        const projectName = row.querySelector(".project-name").textContent.toLowerCase();
-        const projectLanguage = (row.dataset.language || "").toLowerCase();
-        const projectYear = row.dataset.year || "";
-
-        const nameMatch = projectName.includes(nameValue);
-
-        // ✅ FIX: language can be "HTML, CSS, JS"
-        const languageMatch =
-            languageValue === "all" ||
-            projectLanguage.split(",").map(x => x.trim()).includes(languageValue);
-
-        const yearMatch = yearValue === "all" || projectYear === yearValue;
-
-        row.style.display = (nameMatch && languageMatch && yearMatch) ? "grid" : "none";
-    });
-}
